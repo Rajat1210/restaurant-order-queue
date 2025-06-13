@@ -1,0 +1,25 @@
+# Node dependencies (reinstalled inside container)
+node_modules
+
+# Git files
+.git
+.gitignore
+
+# Docker files we don't want in image
+docker-compose.yml
+.dockerignore
+
+# IDE/editor settings
+.vscode
+.idea
+
+# Logs
+*.log
+logs/
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Environment files
+.env
