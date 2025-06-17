@@ -2,7 +2,7 @@ const amqp = require('amqplib');
 
 async function sendToQueue(order) {
     try {
-        const connection = await amqp.connect('amqp://localhost');
+        const connection = await amqp.connect('amqp://rabbitmq');
         const channel = await connection.createChannel();
         await channel.assertQueue('orders', { durable: true });
         channel.sendToQueue('orders', Buffer.from(JSON.stringify(order)), { persistent: true });
