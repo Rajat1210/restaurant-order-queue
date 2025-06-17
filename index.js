@@ -1,9 +1,9 @@
 const express = require('express');
-const bodyParser = require('body-parser');
 const { sendToQueue } = require('./queueProducer');
 
 const app = express();
-app.use(bodyParser.json());
+
+app.use(express.json());
 
 app.get('/', (req, res) => {
     res.send('<h1>Order Queue System Running</h1><p>POST /order</p>');
